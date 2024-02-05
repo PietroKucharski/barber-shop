@@ -3,7 +3,6 @@
 import Image from "next/image"
 import {
     ChevronLeftIcon,
-    MapPin,
     MapPinIcon,
     MenuIcon,
     StarIcon,
@@ -26,7 +25,7 @@ const BarbershopInfo = ({ barbershop }: BarbershopInfoProps) => {
     const router = useRouter()
 
     const handleBackClick = () => {
-        router.back()
+        router.replace("/")
     }
     return (
         <div>
