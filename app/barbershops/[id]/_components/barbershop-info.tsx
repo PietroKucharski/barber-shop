@@ -11,6 +11,12 @@ import {
 import { Button } from "../../../_components/ui/button"
 import { Barbershop } from "@prisma/client"
 import { useRouter } from "next/navigation"
+import {
+    Sheet,
+    SheetContent,
+    SheetTrigger,
+} from "../../../_components/ui/sheet"
+import SideMenu from "../../../_components/side-menu"
 
 interface BarbershopInfoProps {
     barbershop: Barbershop
@@ -34,13 +40,20 @@ const BarbershopInfo = ({ barbershop }: BarbershopInfoProps) => {
                     <ChevronLeftIcon />
                 </Button>
 
-                <Button
-                    variant="outline"
-                    size="icon"
-                    className="z-50 top-4 right-4 absolute"
-                >
-                    <MenuIcon />
-                </Button>
+                <Sheet>
+                    <SheetTrigger asChild>
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            className="z-50 top-4 right-4 absolute"
+                        >
+                            <MenuIcon />
+                        </Button>
+                    </SheetTrigger>
+                    <SheetContent className="p-0">
+                        <SideMenu />
+                    </SheetContent>
+                </Sheet>
                 <Image
                     alt={barbershop.name}
                     src={barbershop.imageUrl}
