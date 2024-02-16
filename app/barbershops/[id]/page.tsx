@@ -11,7 +11,7 @@ import {
 import BarbershopInfo from "./_components/barbershop-info"
 import ServiceItem from "./_components/service-item"
 import { getServerSession } from "next-auth"
-import { authOptions } from "../../api/auth/[...nextauth]/route"
+import { authOptions } from "../../_lib/auth"
 
 interface BarbershopDetailsPageProps {
     params: {
